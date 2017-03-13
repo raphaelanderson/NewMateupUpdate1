@@ -1,0 +1,17 @@
+{# {% extends base.html %} #}
+
+Matches for {{ user.name }}:
+	<ol>
+		{% for m in matches %}
+			<li>
+				{{ m.name }}
+				<ul>
+				{% for a in m.attributes.all %}
+					<li> {{ a.name }} </li>
+				{% endfor %}
+				</ul>
+			</li>
+		{% empty %}
+			<li>Sorry, No matches found! :(</li>
+		{% endfor %}
+	</ol>
